@@ -27,11 +27,16 @@ public class Main {
         Double length1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
         Double length2 = Math.sqrt(Math.pow(x4 - x3, 2) + Math.pow(y4 - y3, 2));
 
-        if (length1.equals(length2)) {
+        int comparisonResult = length1.compareTo(length2);
+
+        if (comparisonResult == 0) {
             System.out.println("The two lines are equal in length.");
+        } else if (comparisonResult > 0) {
+            System.out.println("The first line is longer than the second line.");
         } else {
-            System.out.println("The two lines are not equal in length.");
+            System.out.println("The first line is shorter than the second line.");
         }
+
         System.out.printf("Length of Line 1: %.2f\n", length1);
         System.out.printf("Length of Line 2: %.2f\n", length2);
         scanner.close();
